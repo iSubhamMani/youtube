@@ -10,7 +10,11 @@ const Header = () => {
       </div>
       <div className="col-span-10 flex justify-center">
         <div className="flex border-2 border-gray-300 rounded-full overflow-hidden w-[45%] max-w-[600px] min-w-[200px]">
-          <input type="text" className="outline-none w-full px-4 py-[0.4em]" />
+          <input
+            type="text"
+            className="outline-none w-full px-4 py-[0.4em]"
+            placeholder="Search"
+          />
           <button className=" bg-[#f3f3f3] px-4 py-1">
             <i className="fa-solid fa-magnifying-glass text-zinc-400"></i>
           </button>
