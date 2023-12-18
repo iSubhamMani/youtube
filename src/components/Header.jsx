@@ -2,7 +2,7 @@ const Header = () => {
   return (
     <div className="grid grid-flow-col px-4 py-2 items-center">
       <div className="flex items-center col-span-1 gap-6">
-        <i className="fa-solid fa-bars fa-xl cursor-pointer"></i>
+        <i className="fa-solid fa-bars fa-xl cursor-pointer text-gray-500"></i>
         <div className="flex items-center gap-1">
           <i className="fa-brands fa-youtube text-[#ff1515] fa-xl"></i>
           <h2 className="font-medium text-xl">YouTube</h2>
@@ -15,8 +15,8 @@ const Header = () => {
             className="outline-none w-full px-4 py-[0.4em]"
             placeholder="Search"
           />
-          <button className=" bg-[#f3f3f3] px-4 py-1">
-            <i className="fa-solid fa-magnifying-glass text-zinc-400"></i>
+          <button className=" bg-[#ebebeb] px-4 py-1">
+            <i className="fa-solid fa-magnifying-glass text-zinc-500"></i>
           </button>
         </div>
       </div>
