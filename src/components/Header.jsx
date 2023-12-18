@@ -33,8 +33,8 @@ const Header = () => {
         </div>
       </div>
       <div className="col-span-1 flex gap-8 items-center">
-        <i class="fa-solid fa-video fa-lg cursor-pointer"></i>
-        <i class="fa-regular fa-bell fa-lg cursor-pointer"></i>
+        <i className="fa-solid fa-video fa-lg cursor-pointer"></i>
+        <i className="fa-regular fa-bell fa-lg cursor-pointer"></i>
         <i className="fa-solid fa-user fa-lg cursor-pointer"></i>
       </div>
     </div>
