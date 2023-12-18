@@ -1,5 +1,61 @@
+import { useSelector } from "react-redux";
+
 const Sidebar = () => {
-  return <div></div>;
+  const { isMenuOpen } = useSelector((store) => store.app);
+
+  if (!isMenuOpen) return null;
+
+  return (
+    <div className="col-span-1 flex flex-col gap-4">
+      <div className="border-b-[1px] border-gray-300 pb-2">
+        <ul className="flex flex-col gap-2">
+          <li className="px-4 mx-2 py-2 rounded-lg hover:bg-gray-100 text-[0.9rem] cursor-pointer">
+            Home
+          </li>
+          <li className="px-4 mx-2 py-2 rounded-lg hover:bg-gray-100 text-[0.9rem] cursor-pointer">
+            Shorts
+          </li>
+          <li className="px-4 mx-2 py-2 rounded-lg hover:bg-gray-100 text-[0.9rem] cursor-pointer">
+            Subscriptions
+          </li>
+        </ul>
+      </div>
+      <div className="border-b-[1px] border-gray-300 pb-2">
+        <h1 className="px-4 mx-2 mb-2 font-medium text-lg">Explore</h1>
+        <ul className="flex flex-col gap-2">
+          <li className="px-4 mx-2 py-2 rounded-lg hover:bg-gray-100 text-[0.9rem] cursor-pointer">
+            Music
+          </li>
+          <li className="px-4 mx-2 py-2 rounded-lg hover:bg-gray-100 text-[0.9rem] cursor-pointer">
+            Movies
+          </li>
+          <li className="px-4 mx-2 py-2 rounded-lg hover:bg-gray-100 text-[0.9rem] cursor-pointer">
+            Gaming
+          </li>
+          <li className="px-4 mx-2 py-2 rounded-lg hover:bg-gray-100 text-[0.9rem] cursor-pointer">
+            News
+          </li>
+          <li className="px-4 mx-2 py-2 rounded-lg hover:bg-gray-100 text-[0.9rem] cursor-pointer">
+            Sports
+          </li>
+        </ul>
+      </div>
+      <div className="border-b-[1px] border-gray-300 pb-2">
+        <h1 className="px-4 mx-2 mb-2 font-medium text-lg">You</h1>
+        <ul className="flex flex-col gap-2">
+          <li className="px-4 mx-2 py-2 rounded-lg hover:bg-gray-100 text-[0.9rem] cursor-pointer">
+            Your channel
+          </li>
+          <li className="px-4 mx-2 py-2 rounded-lg hover:bg-gray-100 text-[0.9rem] cursor-pointer">
+            History
+          </li>
+          <li className="px-4 mx-2 py-2 rounded-lg hover:bg-gray-100 text-[0.9rem] cursor-pointer">
+            Watch later
+          </li>
+        </ul>
+      </div>
+    </div>
+  );
 };
 
 export default Sidebar;

@@ -1,8 +1,20 @@
+import { useDispatch } from "react-redux";
+import { toggleMenu } from "../utils/slices/appSlice";
+
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const handleNavToggle = () => {
+    dispatch(toggleMenu());
+  };
+
   return (
-    <div className="grid grid-flow-col px-4 py-2 items-center">
+    <div className="grid grid-flow-col px-6 py-2 items-center">
       <div className="flex items-center col-span-1 gap-6">
-        <i className="fa-solid fa-bars fa-xl cursor-pointer text-gray-500"></i>
+        <i
+          className="fa-solid fa-bars fa-xl cursor-pointer text-gray-500"
+          onClick={handleNavToggle}
+        ></i>
         <div className="flex items-center gap-1">
           <i className="fa-brands fa-youtube text-[#ff1515] fa-xl"></i>
           <h2 className="font-medium text-xl">YouTube</h2>
