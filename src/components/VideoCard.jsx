@@ -8,7 +8,7 @@ const VideoCard = ({ videoInfo }) => {
     <div className="cursor-pointer">
       <div className="rounded-xl overflow-hidden my-2">
         <img
-          className="object-cover w-full hover:brightness-90 transition ease-in-out duration-300"
+          className="object-cover w-full"
           src={thumbnails?.medium?.url}
           alt="Thumbnail"
         />
