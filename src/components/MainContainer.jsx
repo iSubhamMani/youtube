@@ -12,7 +12,7 @@ const MainContainer = () => {
   }, []);
 
   return (
-    <div className="col-span-11 px-8">
+    <div className="px-8 w-full">
       <ButtonList />
       <VideosContainer />
     </div>

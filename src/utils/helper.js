@@ -109,3 +109,11 @@ export const generateMessages = () => {
 export const generateNames = () => {
   return nameList[Math.floor(Math.random() * nameList.length)];
 };
+
+export const modifyViewCount = (viewCount) => {
+  if (viewCount >= 1000 && viewCount < 1000000) {
+    return Math.floor(viewCount / 1000) + "K";
+  } else if (viewCount >= 1000000) {
+    return Math.floor(viewCount / 1000000) + "M";
+  }
+};

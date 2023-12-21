@@ -36,8 +36,11 @@ const LiveChat = () => {
   }, []);
 
   return (
-    <div className="border-2 border-gray-300 rounded-xl px-4 py-2">
-      <div className="flex pr-2 flex-col-reverse gap-2  overflow-auto h-[600px]  w-full min-w-[300px]">
+    <div className="border-2 border-gray-300 rounded-xl py-2">
+      <h1 className="font-medium py-2 px-4  border-b-[1px] border-gray-400">
+        Live Chat
+      </h1>
+      <div className="flex pr-2 px-4 flex-col-reverse gap-2 overflow-auto h-[600px]  w-full min-w-[300px]">
         {chatMessages.map((chatMessage, index) => (
           <ChatMessage
             key={index}
@@ -46,7 +49,7 @@ const LiveChat = () => {
           />
         ))}
       </div>
-      <form className="flex items-center gap-2">
+      <form className="flex items-center gap-2 px-4">
         <input
           type="text"
           value={liveMessage}

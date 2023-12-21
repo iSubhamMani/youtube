@@ -1,3 +1,5 @@
+import { modifyViewCount } from "../utils/helper";
+
 const VideoCard = ({ videoInfo }) => {
   if (!videoInfo) return;
 
@@ -15,10 +17,10 @@ const VideoCard = ({ videoInfo }) => {
       </div>
       <div>
         <p className="font-medium line-clamp-2">{title}</p>
-        <p className="text-sm text-gray-600 font-normal mt-1">{channelTitle}</p>
+        <p className="text-sm text-gray-600 font-medium mt-1">{channelTitle}</p>
         <div>
-          <span className="text-sm text-gray-600 font-normal">
-            {statistics?.viewCount} views
+          <span className="text-sm text-gray-600 font-medium">
+            {modifyViewCount(statistics?.viewCount)} views
           </span>
           <span></span>
         </div>
