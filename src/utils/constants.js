@@ -5,4 +5,6 @@ const YOUTUBE_VIDEO_API = `https://youtube.googleapis.com/youtube/v3/videos?part
 const YOUTUBE_SEARCH_API =
   "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
-export { YOUTUBE_VIDEO_API, YOUTUBE_SEARCH_API };
+const LIVE_CHAT_OFFSET = 25;
+
+export { YOUTUBE_VIDEO_API, YOUTUBE_SEARCH_API, LIVE_CHAT_OFFSET };
