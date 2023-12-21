@@ -3,6 +3,7 @@ import { toggleMenu } from "../utils/slices/appSlice";
 import { useEffect, useState } from "react";
 import { YOUTUBE_SEARCH_API } from "../utils/constants";
 import { cacheResults } from "../utils/slices/searchSlice";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -64,25 +65,36 @@ const Header = () => {
             type="text"
             value={searchQuery}
             onFocus={() => setShowSuggestions(true)}
-            onBlur={() => setShowSuggestions(false)}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="outline-none w-full px-4 py-[0.4em]"
             placeholder="Search"
           />
           <button className=" bg-[#ebebeb] px-4 py-1">
-            <i className="fa-solid fa-magnifying-glass text-zinc-500"></i>
+            <Link
+              to={"/results?search_query=" + searchQuery.split(" ").join("+")}
+              onClick={() => setShowSuggestions(false)}
+            >
+              <i className="fa-solid fa-magnifying-glass text-zinc-500"></i>
+            </Link>
           </button>
         </div>
         {suggestions.length !== 0 && showSuggestions && (
           <div className="shadow-2xl border-[1px] border-gray-200 overflow-hidden rounded-xl bg-white w-[40%] max-w-[520px] min-w-[200px] absolute top-[100%]">
             <ul className="flex flex-col mt-4">
               {suggestions.map((suggestion) => (
-                <li
-                  key={suggestion}
-                  className="font-medium px-4 py-1  cursor-pointer hover:bg-gray-100"
+                <Link
+                  to={
+                    "/results?search_query=" + suggestion.split(" ").join("+")
+                  }
+                  onClick={() => setShowSuggestions(false)}
                 >
-                  {suggestion}
-                </li>
+                  <li
+                    key={suggestion}
+                    className="font-medium px-4 py-1  cursor-pointer hover:bg-gray-100"
+                  >
+                    {suggestion}
+                  </li>
+                </Link>
               ))}
             </ul>
           </div>
