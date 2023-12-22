@@ -2,22 +2,28 @@ import { useEffect, useState } from "react";
 import { YOUTUBE_VIDEO_API } from "../utils/constants";
 import VideoCard from "./VideoCard";
 import { Link } from "react-router-dom";
+import ShimmerHome from "./ShimmerHome";
 
 const VideosContainer = () => {
   const [videos, setVideos] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     getVideos();
   }, []);
 
   const getVideos = async () => {
+    setIsLoading(true);
     const data = await fetch(YOUTUBE_VIDEO_API);
     const fData = await data.json();
 
     setVideos(fData.items);
+    setIsLoading(false);
   };
 
-  return (
+  return isLoading ? (
+    <ShimmerHome />
+  ) : (
     <div
       className="py-8 grid gap-4"
       style={{

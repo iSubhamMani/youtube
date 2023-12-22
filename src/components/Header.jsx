@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../utils/slices/appSlice";
 import { useEffect, useState } from "react";
-import { YOUTUBE_SEARCH_API } from "../utils/constants";
+import { YOUTUBE_SUGGESTIONS_API } from "../utils/constants";
 import { cacheResults } from "../utils/slices/searchSlice";
 import { Link } from "react-router-dom";
 
@@ -31,7 +31,7 @@ const Header = () => {
   }, [searchQuery]);
 
   const getSearchSuggestions = async () => {
-    const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
+    const data = await fetch(YOUTUBE_SUGGESTIONS_API + searchQuery);
     const searchResults = await data.json();
     setSuggestions(searchResults[1]);
 
@@ -83,15 +83,13 @@ const Header = () => {
             <ul className="flex flex-col mt-4">
               {suggestions.map((suggestion) => (
                 <Link
+                  key={suggestion}
                   to={
                     "/results?search_query=" + suggestion.split(" ").join("+")
                   }
                   onClick={() => setShowSuggestions(false)}
                 >
-                  <li
-                    key={suggestion}
-                    className="font-medium px-4 py-1  cursor-pointer hover:bg-gray-100"
-                  >
+                  <li className="font-medium px-4 py-1  cursor-pointer hover:bg-gray-100">
                     {suggestion}
                   </li>
                 </Link>
