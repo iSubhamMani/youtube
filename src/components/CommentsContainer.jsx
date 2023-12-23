@@ -1,4 +1,5 @@
 import Comment from "./Comment";
+import { modifyCount } from "../utils/helper";
 
 const commentsData = [
   {
@@ -50,11 +51,11 @@ const CommentsList = ({ comments }) => {
   ));
 };
 
-const CommentsContainer = () => {
+const CommentsContainer = ({ commentsCount }) => {
   return (
-    <div className="w-[60%]">
-      <div className="my-4 text-2xl font-medium pb-2 border-b-[1px] border-gray-400">
-        Comments:{" "}
+    <div className="w-full mt-10">
+      <div className="my-4 text-xl font-medium pb-2 border-b-[1px] border-gray-400">
+        {modifyCount(commentsCount)} Comments
       </div>
       <CommentsList comments={commentsData} />
     </div>

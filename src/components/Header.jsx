@@ -48,7 +48,7 @@ const Header = () => {
   };
 
   return (
-    <div className="grid grid-flow-col px-6 pt-2 pb-4 items-center sticky top-0 bg-white">
+    <div className="grid grid-flow-col z-10 px-6 pt-2 pb-4 items-center sticky top-0 bg-white">
       <div className="flex items-center col-span-1 gap-6">
         <i
           className="fa-solid fa-bars fa-xl cursor-pointer text-gray-500 "

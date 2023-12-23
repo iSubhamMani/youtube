@@ -39,7 +39,12 @@ const SearchResults = () => {
           key={result.id.videoId || result.id.channelId || result.id.playlistId}
           to={"/watch?v=" + result.id.videoId}
         >
-          <SearchResultsVideoCard videoInfo={result} />
+          <SearchResultsVideoCard
+            videoInfo={result}
+            videoId={
+              result.id.videoId || result.id.channelId || result.id.playlistId
+            }
+          />
         </Link>
       ))}
     </div>

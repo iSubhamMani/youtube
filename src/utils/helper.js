@@ -110,10 +110,17 @@ export const generateNames = () => {
   return nameList[Math.floor(Math.random() * nameList.length)];
 };
 
-export const modifyViewCount = (viewCount) => {
+export const modifyCount = (viewCount) => {
   if (viewCount >= 1000 && viewCount < 1000000) {
     return Math.floor(viewCount / 1000) + "K";
   } else if (viewCount >= 1000000) {
     return Math.floor(viewCount / 1000000) + "M";
   }
+};
+
+export const modifyDateTime = (data) => {
+  const date = new Date(data);
+  return (
+    date.getDate() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear()
+  );
 };
